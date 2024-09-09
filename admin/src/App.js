@@ -1,14 +1,17 @@
-// src/App.js
-
 import React from 'react';
-import './index.css'; // Import Tailwind CSS and other global styles
-import AdminLogin from './components/AdminLogin.jsx'; // Example component import
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AdminLogin from './components/AdminLogin';
+import AdminDashboard from './components/AdminDashboard';
 
 function App() {
   return (
-    <div>
-      <AdminLogin />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<AdminLogin />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        {/* Add routes for other pages as needed */}
+      </Routes>
+    </Router>
   );
 }
 
